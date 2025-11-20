@@ -9,14 +9,21 @@ import Contact from './components/Contact'
 import Footer from './components/Footer'
 
 function App() {
+  const metaTitle = 'Vila Djuric – Petrovac | Luksuzni apartman uz more'
+  const metaDesc = 'Vila Djuric u Petrovcu – moderan, topao i potpuno opremljen apartman na 1 minut od plaže. Rezervišite savršen, miran i prijatan letnji boravak.'
+  const ogImage = 'https://images.unsplash.com/photo-1502920917128-1aa500764ce7?q=80&w=1200&auto=format&fit=crop'
+
   return (
     <div id="top" className="min-h-screen bg-white text-neutral-900">
       <Helmet>
-        <title>Vila Djuric – Petrovac | Luksuzni apartman uz more</title>
-        <meta name="description" content="Vila Djuric u Petrovcu na moru – moderan, potpuno opremljen apartman na 1 minut od plaže. Rezervišite savršen odmor na obali Crne Gore." />
-        <meta property="og:title" content="Vila Djuric – Petrovac" />
-        <meta property="og:description" content="Moderan apartman u srcu Petrovca, 1 minut od mora. Komfor, privatnost i elegancija." />
+        <html lang="sr" />
+        <title>{metaTitle}</title>
+        <meta name="description" content={metaDesc} />
+        <meta property="og:title" content={metaTitle} />
+        <meta property="og:description" content={metaDesc} />
         <meta property="og:type" content="website" />
+        <meta property="og:image" content={ogImage} />
+        <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-40 bg-white/60 backdrop-blur-md border-b border-neutral-200">
@@ -34,7 +41,7 @@ function App() {
 
       <main className="pt-16">
         <Hero />
-        <div id="features"><Features /></div>
+        <Features />
         <About />
         <Gallery />
         <Location />
